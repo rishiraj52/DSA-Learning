@@ -1,7 +1,7 @@
 <h1 align="center"> Types of Recursions </h1>
 
-- Head Recursions
 - Tail Recursions
+- Head Recursions
 - Tree Recursions
 - Indirect Recursions
 - Nested Recursions
