@@ -8,7 +8,6 @@ int fact1(int n){
     if(n==0 || n==1){
         return 1;
     }
-    
     else{
         return fact1(n-1)*n;
     }
@@ -28,8 +27,14 @@ int main() {
     cout<<"Enter the number"<<endl;
     cin>>n;
     
-    cout<<"Factorial of n numbers: "<<fact1(n)<<endl;
-    cout<<"Factorial of n numbers: "<<fact2(n)<<endl;
+    if(n < 0){
+        cout<<"Enter valid number";
+    }
+    
+    else{
+        cout<<"Factorial of n numbers: "<<fact1(n)<<endl;
+        cout<<"Factorial of n numbers: "<<fact2(n)<<endl;
+    }
     
     return 0;
 }
