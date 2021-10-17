@@ -46,6 +46,7 @@ int fibonacci3(int n){
         if(F[n-1]==-1){
             F[n-1]=fibonacci3(n-1);
         }
+        F[n]=F[n-2]+F[n-1];
         return F[n-2]+F[n-1];
     }
 }
