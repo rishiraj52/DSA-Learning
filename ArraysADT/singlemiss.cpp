@@ -20,13 +20,13 @@ int main() {
         int s=n*(n+1)/2;
         cout<<"Missing number = "<<s-sum<<endl;
     }
-    else{
-        int diff=0-arr[0];
-        for(int i=0; i<n-1; i++){
-            if((i-arr[i])!=diff){
-                cout<<i+diff;
-            }
-        }
-    }
+    // else{
+    //     int diff=0-arr[0];
+    //     for(int i=0; i<n-1; i++){
+    //         if((i-arr[i])!=diff){
+    //             cout<<i+diff;
+    //         }
+    //     }
+    // }
       
 }
