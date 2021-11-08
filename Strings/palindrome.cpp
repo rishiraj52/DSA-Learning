@@ -10,6 +10,8 @@ int main()
 {
     char A[] = "liril";
     char B[10];
+
+    // 1st method by making another array
     int i, j;
     for (i = 0; A[i] != '\0'; i++)
     {
@@ -21,8 +23,6 @@ int main()
         B[j] = A[i];
     }
     B[j] = '\0';
-    cout << "Reverse string is " << B << endl;
-    cout << "Reverse string is " << A << endl;
 
     int x, y;
     for (x = 0, y = 0; A[x] != '\0' && B[y] != '\0'; x++, y++)
@@ -34,6 +34,27 @@ int main()
         }
     }
     if (A[x] == B[y])
+    {
+        cout << "String is palindrome" << endl;
+    }
+
+    // 2nd method by reading the same string
+    int u, v;
+    char temp;
+    for (v = 0; A[v] != '\0'; v++)
+    {
+        // nothing goes here
+    }
+    v = v - 1;
+    for (u = 0; u < v; u++, v--)
+    {
+        if (A[u] != A[v])
+        {
+            cout << "String is not a palindrome" << endl;
+            break;
+        }
+    }
+    if (A[u] == A[v])
     {
         cout << "String is palindrome" << endl;
     }
