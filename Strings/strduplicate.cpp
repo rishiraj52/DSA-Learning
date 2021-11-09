@@ -29,4 +29,5 @@ Bitwise oprations
 
 1. Left Shift <<
 2. Bit ORing (Merging)
-3. Bir ANDing (Masking)
+3. Bit ANDing (Masking)
+*/
