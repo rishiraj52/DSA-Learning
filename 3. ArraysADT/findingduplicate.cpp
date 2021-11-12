@@ -4,7 +4,6 @@
 
 using namespace std;
 
-// hashing is not implemented properly just a structural code.
 int main() {
     int arr[10]={2,5,5,7,8,12,12,12,15,17};
     
