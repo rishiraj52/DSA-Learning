@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// Lower triangle
+// Upper triangle
 // row-major form
 struct rowmatrix
 {
