@@ -14,20 +14,36 @@ struct term
 struct poly
 {
     int n;
-    struct term *t;
+    struct term *terms;
 };
+
+void create(struct poly *p)
+{
+    printf("No. of terms?\n");
+    scanf("%d", &p->n);
+    p->terms = (struct term *)malloc(p->n * sizeof(struct term));
+
+    printf("Enter terms\n");
+    for (int i = 0; i < p->n; i++)
+    {
+        scanf("%d %d", &p->terms[i].coeff, &p->terms[i].exp);
+    }
+}
+
+void display(struct poly p)
+{
+    for (int i = 0; i < p.n; i++)
+    {
+        printf("%dx%d+", p.terms[i].coeff, p.terms[i].exp);
+    }
+    printf("\n");
+}
 
 int main()
 {
-    struct poly p;
-    printf("No. of non-zero elements\n");
-    scanf("%d", &p.n);
-    p.t = new term[p.n];
-    printf("Enter polynomial terms\n");
-    for (int i = 0; i < p.n; i++)
-    {
-        printf("Term number = %d\n", i + 1);
-        scanf("%d %d", &p.t[i].coeff, &p.t[i].exp);
-    }
+    struct poly p1;
+
+    create(&p1);
+    display(p1);
     return 0;
 }
