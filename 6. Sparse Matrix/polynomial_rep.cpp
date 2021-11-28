@@ -56,21 +56,21 @@ struct poly *add(struct poly *p1, struct poly *p2)
         }
         else if (p1->terms[i].exp < p2->terms[j].exp)
         {
-            sum->terms[k++] = p1->terms[j++];
+            sum->terms[k++] = p2->terms[j++];
         }
         else
         {
             sum->terms[k].exp = p1->terms[i].exp;
-            sum->terms[k++].coeff = p1.terms[i++].coeff + p2.terms[j++].coeff;
+            sum->terms[k++].coeff = p1->terms[i++].coeff + p2->terms[j++].coeff;
         }
     }
     for (; i < p1->n; i++)
     {
-        sum->terms[k++] = p1->terms[i++];
+        sum->terms[k++] = p1->terms[i];
     }
     for (; j < p2->n; j++)
     {
-        sum->terms[k++] = p2->terms[j++];
+        sum->terms[k++] = p2->terms[j];
     }
 
     sum->n = k;
@@ -88,8 +88,10 @@ int main()
 
     printf("First polynomial: \n");
     display(p1);
+    printf("\n");
     printf("Second polynomial: \n");
     display(p2);
+    printf("\n");
 
     printf("Sum of both polynomials polynomial: \n");
     display(*p3);
