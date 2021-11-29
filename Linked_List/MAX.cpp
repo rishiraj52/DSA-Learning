@@ -74,7 +74,7 @@ int RMax(struct Node *p)
 
 int main()
 {
-    int arr[] = {2, 5, 7, 10, 13, 8, 31, 3, 19};
+    int arr[] = {2, 5, 7, 10, 13, 8, 16, 31, 3, 19};
 
     create(arr, 9);
     Rdisplay(first);
