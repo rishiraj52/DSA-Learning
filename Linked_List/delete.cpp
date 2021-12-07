@@ -20,7 +20,7 @@ void create(int A[], int n)
     first->next = NULL;
     last = first;
 
-    for (int i = 1; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         t = (struct Node *)malloc(sizeof(struct Node));
         t->data = A[i];
@@ -39,64 +39,68 @@ void Rdisplay(struct Node *p)
     }
 }
 
-void insert(int pos, int x)
+int count(struct Node *p)
 {
-    Node *p, *t;
-    if (pos == 0)
+    int c = 0;
+    while (p != 0)
     {
-        t = new Node;
-        t->data = x;
-        t->next = first;
-        first = t;
+        c++;
+        p = p->next;
     }
-    else if (pos > 0)
-    {
-        p = first;
-        for (int i = 0; i < pos - 1; i++)
-        {
-            p = p->next;
-        }
-        if (p != 0)
-        {
-            t = new Node;
-            t->data = x;
-            t->next = p->next;
-            p->next = t;
-        }
-    }
+    return c;
 }
 
-void insertlast(int x)
+int Delete(struct Node *p, int index)
 {
-    struct Node *t = new Node;
-    t->data = x;
-    t->next = NULL;
-    if (first == NULL)
+    struct Node *q;
+    int x = -1;
+
+    if (index < 1 || index > count(p))
     {
-        first = last = t;
+        return -1;
+    }
+    if (index == 1)
+    {
+        q = first;
+        x = first->data;
+        first = first->next;
+        delete q;
+        return x;
     }
     else
     {
-        last->next = t;
-        last = t;
+        for (int i = 0; i < index - 1; i++)
+        {
+            q = p;
+            p = p->next;
+        }
+        q->next = p->next;
+        x = p->data;
+        delete p;
+        return x;
     }
 }
 
 int main()
 {
-    int arr[] = {2, 5, 7, 10, 13, 8, 16, 31, 3, 19};
+    int arr[] = {2, 5, 7, 10, 13, 17, 22, 25, 52};
 
     create(arr, 9);
     Rdisplay(first);
+
     cout << endl;
-    insert(4, 33);
+
+    Delete(first, 15);
     Rdisplay(first);
+
     cout << endl;
-    insert(7, 6);
+
+    Delete(first, 5);
     Rdisplay(first);
-    insertlast(16);
-    Rdisplay(first);
-    insertlast(36);
+
+    cout << endl;
+
+    Delete(first, 2);
     Rdisplay(first);
 
     return 0;
